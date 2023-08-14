@@ -35,11 +35,11 @@ const BackBtnHeader = ({navigation,centerheaderTitle = 'Dashboard'}) => {
 
             {/* MARK : --- App name Right2Rise */}
             <View style={{ flexDirection: 'row' }}>
-              <Text style={{ ...TextStyles.bold, color: Colors.themePink }}>
+              <Text style={{ ...TextStyles.bold, color: Colors.themePink,fontSize:20 }}>
                 Rigth
                 {En.Right}
               </Text>
-              <Text style={{ ...TextStyles.bold, color: Colors.themeBlue }}>
+              <Text style={{ ...TextStyles.bold, color: Colors.themeBlue ,fontSize:20}}>
                 {En.toRise}
               </Text>
             </View>
@@ -47,7 +47,7 @@ const BackBtnHeader = ({navigation,centerheaderTitle = 'Dashboard'}) => {
             {/* MARK: ---- Bottom Screen Title */}
 
             <View style={{}}>
-              <Text style={{ ...TextStyles.bold, color: Colors.text_Black }}>
+              <Text style={{ ...TextStyles.medium, color: Colors.text_Black,fontSize:20 }}>
                 {centerheaderTitle}
               </Text>
               <View style={{ height: 1.5, borderRadius: 1, backgroundColor: Colors.themePink }} />

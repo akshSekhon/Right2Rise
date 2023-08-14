@@ -2,10 +2,10 @@ export default {
     app_Red: 'red',
     app_gray: 'gray',
     app_White: 'white',
+    app_Bg: '#EEEEEE',//#F1F1F1
     app_Trans_White: 'rgba(255, 255, 255, 0.5)',
     app_Green: 'green',
     app_Black: 'black',
-    app_Bg: '#EEEEEE',
     transparent: 'transparent',
     selectedBg: 'rgba(222, 222, 222, 1)',//'#D2D4D0',
     text_Black: 'black',

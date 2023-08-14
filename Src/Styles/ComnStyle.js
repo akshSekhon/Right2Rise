@@ -60,17 +60,17 @@ export const CommonStyles = StyleSheet.create({
     width: scale(20)
   },
   textfieldContainer: {
-    backgroundColor: Colors.bg_textfld, flexDirection: 'row',
-    borderRadius: 10,
-    borderColor: Colors.border_textfld_dark, borderWidth: 1.5,
-    paddingHorizontal: moderateScale(10),
+    backgroundColor: Colors.app_Bg, flexDirection: 'row',
+    borderRadius: moderateScale(5),
+    borderColor: Colors.themePink, borderWidth: 1.5,
+    paddingHorizontal: moderateScale(0),
     // paddingVertical: moderateScale(0),
-    height: moderateScale(54),
+    height: moderateScale(45),
     // justifyContent: "center",
     alignItems: "center"
   },
   button: {
-    borderRadius: 10,
+    borderRadius: 100,
     height: 50,
     overflow: 'hidden'
   },
@@ -121,7 +121,7 @@ export const TextStyles = StyleSheet.create({
   },
   bold: {
     fontFamily: AppFonts.bold,
-    fontSize: textScale(25),
+    fontSize: textScale(22),
     // padding: 5,
     color: Colors.text_Black,
   },
@@ -138,7 +138,8 @@ export const TextStyles = StyleSheet.create({
   },
   regularMedium: {
     fontFamily: AppFonts.medium,
-    fontSize: textScale(12),
+    fontSize: textScale(15),
+    color:Colors.text_Black
   },
   btnTitle: {
     color: Colors.text_White, fontFamily: AppFonts.medium,

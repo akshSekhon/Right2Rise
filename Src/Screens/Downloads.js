@@ -76,11 +76,11 @@ const _updateSections = (activeSections) => {
     }}
   />
 </View>
- <Components.CustomButton
+ {/* <Components.CustomButton
  onPress = {()=>Alert.alert("Test Button")}
  bgColor={Colors.themePink}
   title = {"test"}
-  />
+  /> */}
     </View>
     </Components.AppWrapper>
  

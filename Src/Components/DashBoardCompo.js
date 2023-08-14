@@ -54,7 +54,7 @@ const styles = StyleSheet.create({
 
         // justifyContent: 'center',
         // alignItems: 'center',
-        backgroundColor: Colors.app_Bg,
+        backgroundColor: Colors.app_White,
         shadowColor: Colors.app_Black,
         shadowRadius: 3,
         shadowOpacity: 0.4,

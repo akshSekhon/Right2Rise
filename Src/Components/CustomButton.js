@@ -13,7 +13,7 @@ const CustomButton = ({
 }) => {
 
     return (
-        <View>
+        // <View>
         <TouchableHighlight
             style={{ ...CommonStyles.button, ...containerStyle }}
             underlayColor={Colors.app_White}
@@ -30,7 +30,7 @@ const CustomButton = ({
             </View>
 
         </TouchableHighlight>
-        </View>
+        // </View>
     );
 };
 
