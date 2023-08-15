@@ -98,10 +98,28 @@ export const CommonStyles = StyleSheet.create({
   tabBarLabelStyle: {
     marginTop: moderateScale(4),
     justifyContent: 'center'
-  }
+  },accordContainer: {
+    paddingHorizontal: moderateScale(20),
+    paddingBottom: moderateScale(35),
+    marginTop:moderateScale(20),
+    
+},accordSectContain:{
+    borderTopLeftRadius: scale(25),
+    borderBottomRightRadius: scale(25),
+    borderBottomLeftRadius:3,
+    borderTopRightRadius:3,
+    backgroundColor:Colors.app_White,
+    paddingVertical:10,
+
+}
 });
 
 export const TextStyles = StyleSheet.create({
+  regular: {
+    fontFamily: AppFonts.regular,
+    fontSize: textScale(15),
+    color: Colors.text_Black,
+  },
   extraBold: {
     fontFamily: AppFonts.bold,
     fontSize: textScale(28),

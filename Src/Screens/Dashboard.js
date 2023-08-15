@@ -15,7 +15,7 @@ const Dashboard = ({navigation}) => {
     const screenList = [
         { id: 1, icon: ImagePath.pencil, title: En.About_Us, navkey: Navigate.about_Us, bgColor: Colors.themePink },
         { id: 2, icon: ImagePath.arrowDwnBlack, title: En.Training, navkey: Navigate.training, bgColor: Colors.themeBlue },
-        { id: 3, icon: ImagePath.bitcoin, title: En.Consulting, navkey: Navigate.consultingonsulting, bgColor: Colors.themeBlue },
+        { id: 3, icon: ImagePath.bitcoin, title: En.Consulting, navkey: Navigate.consulting, bgColor: Colors.themeBlue },
         { id: 4, icon: ImagePath.userIcon, title: En.POSH, navkey: Navigate.posh, bgColor: Colors.themePink },
         { id: 5, icon: ImagePath.usdt, title: En.RKT_Foundation, navkey: Navigate.RKT_Foundation, bgColor: Colors.themePink },
         { id: 6, icon: ImagePath.etherium, title: En.Downloads, navkey: Navigate.downloads, bgColor: Colors.themeBlue },
@@ -57,7 +57,6 @@ const Dashboard = ({navigation}) => {
                 <FlatList
                     columnWrapperStyle={{ justifyContent: 'space-between', }}
                     data={screenList}
-                    //   data={[{key: 'a'}, {key: 'b'}, {key: 'c'}]}
                     keyExtractor={item => item.id}
                     horizontal={false}
                     numColumns={2}

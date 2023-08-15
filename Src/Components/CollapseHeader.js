@@ -5,7 +5,9 @@ import Colors from '../Colors/Colors'
 import { TextStyles } from '../Styles/ComnStyle'
 import { ImageEnum, ImagePath } from '../Constants'
 
-const CollapseHeader = ({ data }) => {
+const CollapseHeader = ({ data,isActive}) => {
+    console.log('CollapseHeader isActive isActive: --- ',isActive)
+
     return (
         <View style={styles.container}>
             <View style={styles.innerContainer}>
@@ -15,7 +17,7 @@ const CollapseHeader = ({ data }) => {
                 <Image
                     source={ImagePath.arrowDwn}
                     resizeMode={ImageEnum.contain}
-                    style={{ ...styles.icon }}
+                    style={{ ...styles.icon, transform:isActive?[{ rotate: '180deg'}]: [{ rotate: '0deg'}]}}
 
                 />
             </View>
@@ -29,9 +31,10 @@ export default CollapseHeader
 const styles = StyleSheet.create({
 
     container: {
-        paddingBottom: moderateScaleVertical(15),
+        // paddingBottom: moderateScaleVertical(15),
         backgroundColor: Colors.app_White,
-        overflow:'hidden'
+        overflow:'hidden',  
+  
     },
     innerContainer: {
         flexDirection: 'row',
@@ -44,8 +47,9 @@ const styles = StyleSheet.create({
         borderBottomLeftRadius:3,
         borderTopRightRadius:3,
         shadowColor: Colors.shadowColor,
-        elevation: 6,
+        // elevation: 6,
         shadowRadius: 14,
+
 
     }, headerTitle: {
         color: Colors.text_White

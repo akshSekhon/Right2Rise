@@ -10,6 +10,10 @@ import { TouchableHighlight } from 'react-native-gesture-handler'
 
 const DashBoardCompo = ({ data ,navigation}) => {
     const onCellSelected = () => {
+        if (data.navkey === Navigate.consulting){
+            Alert.alert('Under working')
+            return
+        }
         navigation.navigate(data.navkey)
     }
     return (

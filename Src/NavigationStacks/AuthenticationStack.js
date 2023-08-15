@@ -11,9 +11,20 @@ const AuthenticationStack = () => {
 
   return (
       <Stack.Navigator screenOptions={{ headerShown: false }}>
+
       <Stack.Screen name={Navigate.dashboard} component={screens.Dashboard} />
+      <Stack.Screen name={Navigate.about_Us} component={screens.AboutUs} />
       <Stack.Screen name={Navigate.downloads} component={screens.Downloads} />
       <Stack.Screen name={Navigate.conact_US} component={screens.ContactUs} />
+      <Stack.Screen name={Navigate.posh} component={screens.Posh} />
+      <Stack.Screen name={Navigate.training} component={screens.Training} />
+      <Stack.Screen name={Navigate.RKT_Foundation} component={screens.RKTFoundation} />
+      <Stack.Screen name={Navigate.videos} component={screens.Videos} />
+
+
+
+      
+
 
 
       {/* {(isSplash) && <Stack.Screen name={Constants.splash} component={screens.SplashScreen}  options={{gestureEnabled: false}}/>} */}

@@ -8,12 +8,18 @@ import Colors from '../Colors/Colors';
 import En from '../Constants/En';
 import { CommonStyles } from '../Styles/ComnStyle';
 
-const Downloads = ({navigation}) => {
+const Posh = ({navigation}) => {
 const [activeSections,setActiveSections] = useState([])
   const SECTIONS = [
     {
       title: 'First',
-      content: 'Lorem content from first ipsum...',
+      content: `POSH Act Prevention of Sexual Harassment POCO Act
+      Offences Act POSH Act Prevention of Sexual Harassmen
+      from Sexual Offences Act POSH Act Prevention of Sexua
+      of Children from Sexual Offences Act POSH Act Prevent
+      he Protection of Children from Sexual Offences Act POS
+      POCSO Act The Protection of Children from Sexual Offe
+      Harassment POCO Act The Protection of Children from...`,
     },
     {
       title: 'Second',
@@ -42,7 +48,6 @@ const _renderContent = (section,index,isActive) => {
     <View style={{marginBottom:20}}>
     <Components.CollapseContainer
       isActive = {isActive}
-
       data = {section}
       />  
         </View>
@@ -56,7 +61,7 @@ const _updateSections = (activeSections) => {
     <Components.AppWrapper>
    <View style={styles.container}>
       <Components.Header
-      centerheaderTitle={En.Downloads}
+      centerheaderTitle={En.POSH}
       navigation={navigation}
       />
       {/* <Text style ={styles.font}>Downloads</Text> */}
@@ -77,13 +82,13 @@ const _updateSections = (activeSections) => {
                             ...CommonStyles.accordSectContain
                         }}
                     />
-{/* </View> */}
+</View>
  {/* <Components.CustomButton
  onPress = {()=>Alert.alert("Test Button")}
  bgColor={Colors.themePink}
   title = {"test"}
   /> */}
-    </View>
+    {/* </View> */}
     </Components.AppWrapper>
  
 
@@ -91,7 +96,7 @@ const _updateSections = (activeSections) => {
   )
 }
 
-export default Downloads
+export default Posh
 
 const styles = StyleSheet.create({
 

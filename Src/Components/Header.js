@@ -69,11 +69,11 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
     backgroundColor:Colors.app_Bg,
     shadowColor: Colors.app_Black,
-    shadowRadius: 3,
+    shadowRadius: 6,
     shadowOpacity: 0.4,
     borderRadius: 4,
     shadowOffset: { height: 0, width: 0 },
-    elevation: 5,
+    elevation: 12,
   }
 
   , options: {

@@ -8,7 +8,7 @@ import Colors from '../Colors/Colors';
 import En from '../Constants/En';
 import { CommonStyles } from '../Styles/ComnStyle';
 
-const Downloads = ({navigation}) => {
+const AboutUs = ({navigation}) => {
 const [activeSections,setActiveSections] = useState([])
   const SECTIONS = [
     {
@@ -27,22 +27,21 @@ const [activeSections,setActiveSections] = useState([])
       </View>
     );
   };
-const  _renderHeader = (section) => {
+const  _renderHeader = (section,index,isActive) => {
   return (
     <View style={styles.header}>
       <Components.CollapseHeader
+      isActive = {isActive}
       data = {section}
       />
     </View>
   );
 };
 
-const _renderContent = (section,index,isActive) => {
+const _renderContent = (section) => {
   return (
     <View style={{marginBottom:20}}>
     <Components.CollapseContainer
-      isActive = {isActive}
-
       data = {section}
       />  
         </View>
@@ -56,7 +55,7 @@ const _updateSections = (activeSections) => {
     <Components.AppWrapper>
    <View style={styles.container}>
       <Components.Header
-      centerheaderTitle={En.Downloads}
+      centerheaderTitle={En.About_Us}
       navigation={navigation}
       />
       {/* <Text style ={styles.font}>Downloads</Text> */}
@@ -77,13 +76,13 @@ const _updateSections = (activeSections) => {
                             ...CommonStyles.accordSectContain
                         }}
                     />
-{/* </View> */}
+</View>
  {/* <Components.CustomButton
  onPress = {()=>Alert.alert("Test Button")}
  bgColor={Colors.themePink}
   title = {"test"}
   /> */}
-    </View>
+    {/* </View> */}
     </Components.AppWrapper>
  
 
@@ -91,7 +90,7 @@ const _updateSections = (activeSections) => {
   )
 }
 
-export default Downloads
+export default AboutUs
 
 const styles = StyleSheet.create({
 
