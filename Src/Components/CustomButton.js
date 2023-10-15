@@ -15,19 +15,19 @@ const CustomButton = ({
     return (
         // <View>
         <TouchableHighlight
-            style={{ ...CommonStyles.button, ...containerStyle }}
+            style={{ ...CommonStyles.button,backgroundColor:bgColor,...styles.buttonStyle,...containerStyle}}
             underlayColor={Colors.app_White}
             onPress={!isdisable? onPress:onDisablePress}
             
         >
             
-            <View
+            {/* <View
                 style={{...styles.linearGradiant,backgroundColor:bgColor}}
-            >
+            > */}
                 <Text style={{ ...TextStyles.btnTitle, ...titleStyle }} >
                     {title}
                 </Text>
-            </View>
+            {/* </View> */}
 
         </TouchableHighlight>
         // </View>
@@ -37,7 +37,10 @@ const CustomButton = ({
 // define your styles
 const styles = StyleSheet.create({
     linearGradiant: {
-        height: '100%', width: '100%', justifyContent: 'center', alignItems: 'center'
+        height: '100%', width: '70%', justifyContent: 'center', alignItems: 'center'
+    },
+    buttonStyle: {
+        paddingHorizontal:20, justifyContent:'center', alignItems: 'center',borderRadius:8
     },
 });
 

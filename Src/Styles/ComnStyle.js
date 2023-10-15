@@ -70,8 +70,8 @@ export const CommonStyles = StyleSheet.create({
     alignItems: "center"
   },
   button: {
-    borderRadius: 100,
-    height: 50,
+    //borderRadius: 10,
+    height: 40,
     overflow: 'hidden'
   },
   tabIconStyle: {

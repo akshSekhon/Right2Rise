@@ -1,3 +1,4 @@
+
 export default{
 downloads:'Downloads',
 dashboard:'Dashboard',
@@ -8,7 +9,6 @@ posh:'Posh',
 RKT_Foundation:'RKT Foundation',
 videos:'Videos',
 conact_US:'Contact Us',
-
-
-drower:'Drower'
+drower:'Drower',
+logins:'Logins'
 }

@@ -8,12 +8,14 @@ import { TouchableHighlight } from 'react-native-gesture-handler';
 import { ImagePath, Titles } from '../Constants';
 import { TextStyles } from '../Styles/ComnStyle';
 import En from '../Constants/En';
+import { NavigationContainer } from '@react-navigation/native';
 
 // create a component
-const BackBtnHeader = ({navigation,centerheaderTitle = 'Dashboard'}) => {
+const BackBtnHeader = ({navigation,centerheaderTitle = 'Dashboard',NavigationContainer}) => {
   function onPressBack() {
     // Alert.alert("press options")
-    navigation.goBack()
+   // navigation.goBack()
+    navigation.toggleDrawer();
   }
   return (
     <View style={{ ...styles.container, }}>
@@ -36,7 +38,7 @@ const BackBtnHeader = ({navigation,centerheaderTitle = 'Dashboard'}) => {
             {/* MARK : --- App name Right2Rise */}
             <View style={{ flexDirection: 'row' }}>
               <Text style={{ ...TextStyles.bold, color: Colors.themePink,fontSize:20 }}>
-                Rigth
+                Right
                 {En.Right}
               </Text>
               <Text style={{ ...TextStyles.bold, color: Colors.themeBlue ,fontSize:20}}>

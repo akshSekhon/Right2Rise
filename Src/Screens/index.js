@@ -7,6 +7,7 @@ export {default as Training} from './Training';
 export {default as AboutUs} from './AboutUs';
 export {default as RKTFoundation} from './RKTFoundation';
 export {default as Videos} from './Videos';
+export {default as Logins} from './Login';
 
 
 

@@ -23,7 +23,10 @@ POSH:'POSH',
 RKT_Foundation:'RKT Foundation',
 Downloads:'Downloads',
 Videos:'Videos',
-Conact_US:'CONTACT US'
+Conact_US:'CONTACT US',
+Phone:'Mobile Number',
+otp: 'Send OTP',
+enterOtp: 'Enter OTP'
 
 }
 

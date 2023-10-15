@@ -1,3 +1,4 @@
+import { Training } from '../Screens';
 
 
 export default{
@@ -6,7 +7,7 @@ bgImage : require('../Assets/Images/bgImage.png'),
 pdf : require('../Assets/Images/pdf.png'),
 
 logoSvg: require('../Assets/Images/bharatbit.svg'),
-logo: require('../Assets/Images/app_logo.png'),
+logo: require('../Assets/Images/logo.png'),
 person: require('../Assets/Icons/person.png'),
 arrowDwn:require('../Assets/Icons/arrow_dwn.png'),
 arrowDwnBlack:require('../Assets/Icons/arrow_down_black.png'),
@@ -55,13 +56,34 @@ cancel:require('../Assets/Icons/cancel.png'),
 
 youtube:require('../Assets/Icons/youtube.png'),
 
-
-
-
-
-
+/* left nav icon */
+about_nav:require('../Assets/Icons/about_us_nav.png'),
+training_nav:require('../Assets/Icons/training_nav.png'),
+posh_nav:require('../Assets/Icons/posh_nav.png'),
+videos_nav:require('../Assets/Icons/videos_nav.png'),
+upcoming_nav:require('../Assets/Icons/upcoming_nav.png'),
+download_nav:require('../Assets/Icons/downloads_nav.png'),
+contact_nav:require('../Assets/Icons/contactus_nav.png'),
+consulting_nav:require('../Assets/Icons/consulting_nav.png'),
+/* end left nav */
 
 
 loader_gif:require('../Assets/Images/loader.gif'),
-splashVideo:require('../Assets/Images/splash_video.mp4')
+splashVideo:require('../Assets/Images/splash_video.mp4'),
+
+about_us: require('../Assets/Icons/about_us.png'),
+training: require('../Assets/Icons/training.png'),
+consulting: require('../Assets/Icons/consulting.png'),
+posh: require('../Assets/Icons/posh.png'),
+downloads: require('../Assets/Icons/downloads.png'),
+contact_us: require('../Assets/Icons/contact_us.png'),
+upcoming: require('../Assets/Icons/upcoming.png'),
+videos: require('../Assets/Icons/videos.png')
+
+
+
+
+
+
+
 }

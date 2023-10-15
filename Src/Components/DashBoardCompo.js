@@ -21,20 +21,22 @@ const DashBoardCompo = ({ data ,navigation}) => {
             <View style={styles.innerContainer} >
                 <>
                     <TouchableHighlight
-                        style={{ backgroundColor: data?.bgColor, height: scale(100), width: '100%', alignItems: 'center', justifyContent: 'center', }}
+                        style={{height: scale(125) }}
                         underlayColor={Colors.selectedBg}
                         onPress={onCellSelected}
 
                     >
                         <Image
+                        style={{height:"100%", width:"100%"}}
                             source={data.icon}
-                            resizeMode={ImageEnum.contain}
+                            resizeMode={ImageEnum.cover}
                         />
                         {/* </View> */}
                     </TouchableHighlight>
-                    <Text
-                        style={{ ...TextStyles.medium, fontSize: textScale(14), paddingVertical: moderateScaleVertical(5),alignSelf:'center'}}
+                    {/*<Text
+                        style={{ ...TextStyles.medium, fontSize: textScale(14), paddingVertical: moderateScaleVertical(5),alignSelf:'center',height:0}}
                     >{data?.title}</Text>
+    */}
                 </>
 
             </View>
