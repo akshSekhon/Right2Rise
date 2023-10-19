@@ -8,6 +8,8 @@ export {default as CustomButton} from './CustomButton';
 export {default as CustomTextInput} from './CustomTextInput';
 export {default as VideoItem} from './VideoItem';
 export {default as Login} from './LoginCompo';
+export {default as CustomLoader} from './CustomLoader';
+
 
 
 

@@ -6,6 +6,7 @@ import {SafeAreaView,View,StyleSheet, Image,Text,Linking} from 'react-native';
 
 import {DrawerContentScrollView, DrawerItemList, DrawerItem,} from '@react-navigation/drawer';
 import { ImagePath } from '../Constants';
+import DrawerOptions from './DrawerOptions';
 
 
 const CustomSidebarMenu = (props) => {
@@ -21,7 +22,9 @@ const CustomSidebarMenu = (props) => {
         style={styles.sideMenuProfileIcon}
       />
       <DrawerContentScrollView {...props}>
-        <DrawerItemList {...props} />
+<DrawerOptions  props={props}/>
+
+        {/* <DrawerItemList {...props} /> */}
       </DrawerContentScrollView>
     </SafeAreaView>
   );

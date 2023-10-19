@@ -2,7 +2,7 @@ import { Alert, Image, StyleSheet, Text, TouchableHighlight, View } from 'react-
 import React, { useState } from 'react';
 import AppFonts from '../Constants/AppFonts';
 import * as Components from '../Components/Index';
-import { moderateScale, moderateScaleVertical, scale } from '../Styles/responsiveSize';
+import { moderateScale, moderateScaleVertical, scale, textScale } from '../Styles/responsiveSize';
 import Colors from '../Colors/Colors';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 import En from '../Constants/En';
@@ -28,7 +28,7 @@ const LoginScreen = ({ navigation }) => {
                         style={{ width: '100%', height: scale(200), }} />
                 </View>
                 <View style={{alignItems:'center',paddingVertical:moderateScaleVertical(15)}}>
-                    <Text style={{color:Colors.themeBlue}}>Enter your details to Logins</Text>
+                    <Text style={{color:Colors.themeBlue,fontFamily:AppFonts.italic}}>Enter your details to Logins</Text>
                 </View>
 
         <KeyboardAwareScrollView style={{ paddingTop: moderateScaleVertical(30) }}>
@@ -67,7 +67,8 @@ const LoginScreen = ({ navigation }) => {
             <View style={{ justifyContent: 'center', alignItems: 'center', marginTop: moderateScaleVertical(20) }}>
               <Components.CustomButton
                 containerStyle={{...styles.buttonSubmit,marginHorizontal:moderateScale(30)}}
-                onPress={redirectMain}
+                titleStyle={{fontSize:textScale(15)}}
+                onPress={() => Alert.alert("Otp send")}
                 bgColor={Colors.themePink}
                 title={En.otp}
               />
@@ -90,20 +91,14 @@ const LoginScreen = ({ navigation }) => {
             <View style={{ justifyContent: 'center', alignItems: 'center', marginTop: moderateScaleVertical(30) }}>
               <Components.CustomButton
                 containerStyle={styles.buttonSubmit}
-                onPress={() => Alert.alert("Test Button")}
+                onPress={redirectMain}
                 bgColor={Colors.themeBlue}
+                titleStyle={{fontSize:textScale(16)}}
                 title={En.Submit}
               />
             </View>
-
-
           </View>
-
-
         </KeyboardAwareScrollView>
-
-
-
       </View>
     </Components.AppWrapper>
 
@@ -126,7 +121,8 @@ const styles = StyleSheet.create({
   , fieldName: {
     color: Colors.themeBlue,
    // width: moderateScale(110),
-    textAlign: 'center'
+    textAlign: 'center',
+    fontFamily: AppFonts.italic
   }, discriptionContainer: {
     flex: 1,
     backgroundColor: Colors.app_Bg, borderRadius: 10,

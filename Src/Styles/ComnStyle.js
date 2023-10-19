@@ -56,8 +56,8 @@ export const CommonStyles = StyleSheet.create({
   textInputImg: {
     borderRadius: 0, alignSelf: 'center',
     resizeMode: ImageEnum.contain,
-    height: scale(20),
-    width: scale(20)
+    height: scale(35),
+    width: scale(35)
   },
   textfieldContainer: {
     backgroundColor: Colors.app_Bg, flexDirection: 'row',

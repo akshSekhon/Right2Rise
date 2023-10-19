@@ -8,48 +8,40 @@ pdf : require('../Assets/Images/pdf.png'),
 
 logoSvg: require('../Assets/Images/bharatbit.svg'),
 logo: require('../Assets/Images/logo.png'),
-person: require('../Assets/Icons/person.png'),
+
 arrowDwn:require('../Assets/Icons/arrow_dwn.png'),
 arrowDwnBlack:require('../Assets/Icons/arrow_down_black.png'),
 mail:require('../Assets/Icons/mail.png'),
-mobile:require('../Assets/Icons/mobile.png'),
-lock:require('../Assets/Icons/lock.png'),
+
+
 eyeClose:require('../Assets/Icons/eye_close.png'),
 eyeOpen:require('../Assets/Icons/eye_open.png'),
 eyeOpenBlack:require('../Assets/Icons/eye_open_black.png'),
 eyeCloseBlack:require('../Assets/Icons/eye_close_black.png'),
-chek:require('../Assets/Icons/check.png'),
-unCheck:require('../Assets/Icons/unCheck.png'),
+
+
 arrow_right_lighBrown:require('../Assets/Icons/arrow_right_lighBrown.png'),
 filterBtack:require('../Assets/Icons/filterBtack.png'),
 filterGradiant:require('../Assets/Icons/filterGradiant.png'),
-pencil:require('../Assets/Icons/pencil.png'),
+
 dealsIcon: require('../Assets/Icons/deals_icon.png'),
-walletIcon: require('../Assets/Icons/wallet.png'),
-tradesIcon: require('../Assets/Icons/trades_arrow.png'),
+
 dashboardIcon: require('../Assets/Icons/dashboard_icon.png'),
-userIcon: require('../Assets/Icons/user_icon.png'),
+
 arrowLeftGray:require('../Assets/Icons/arrow_Left_gray.png'),
-tradeHistory:require('../Assets/Icons/trade_history.png'),
-support:require('../Assets/Icons/support.png'),
-settings:require('../Assets/Icons/settings.png'),
 
 bitcoin:require('../Assets/Icons/Bitcoin.png'),
 etherium:require('../Assets/Icons/Ethereum.png'),
-usdt:require('../Assets/Icons/USDT.png'),
 
-swith_on:require('../Assets/Icons/switch_on.png'),
-swith_off_single:require('../Assets/Icons/switch_off_single.png'),
-swith_off_double:require('../Assets/Icons/switch_off_double.png'),
+
 arrow_up:require('../Assets/Icons/arrow_up.png'),
 arrow_down_light_thin:require('../Assets/Icons/arrow_down_light_thin.png'),
-search:require('../Assets/Icons/search.png'),
 ellipse:require('../Assets/Icons/ellipse.png'),
 copy:require('../Assets/Icons/copy.png'),
 
-transfer:require('../Assets/Icons/transfer.png'),
+
 deposit:require('../Assets/Icons/deposit.png'),
-withdraw:require('../Assets/Icons/withdraw.png'),
+
 send:require('../Assets/Icons/send.png'),
 attacthment:require('../Assets/Icons/attacthment.png'),
 cancel:require('../Assets/Icons/cancel.png'),
@@ -57,14 +49,24 @@ cancel:require('../Assets/Icons/cancel.png'),
 youtube:require('../Assets/Icons/youtube.png'),
 
 /* left nav icon */
-about_nav:require('../Assets/Icons/about_us_nav.png'),
-training_nav:require('../Assets/Icons/training_nav.png'),
+
 posh_nav:require('../Assets/Icons/posh_nav.png'),
-videos_nav:require('../Assets/Icons/videos_nav.png'),
-upcoming_nav:require('../Assets/Icons/upcoming_nav.png'),
-download_nav:require('../Assets/Icons/downloads_nav.png'),
+videos:require('../Assets/Icons/videos.png'),
 contact_nav:require('../Assets/Icons/contactus_nav.png'),
-consulting_nav:require('../Assets/Icons/consulting_nav.png'),
+
+upcoming_nav:require('../Assets/Icons/upcoming_nav.png'),
+
+about_menu:require('../Assets/Icons/about-menu.png'),
+training_menu:require('../Assets/Icons/training-menu.png'),
+download_menu:require('../Assets/Icons/download-menu.png'),
+consulting_menu:require('../Assets/Icons/consult-menu.png'),
+videos_menu:require('../Assets/Icons/videos-menu.png'),
+upcoming_menu:require('../Assets/Icons/upcoming-menu.png'),
+posh_menu:require('../Assets/Icons/posh-menu.png'),
+contact_menu:require('../Assets/Icons/contact-menu.png'),
+
+
+
 /* end left nav */
 
 

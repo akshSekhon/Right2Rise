@@ -33,8 +33,9 @@ const AppWrapper = (
            {children}
            </View>
             {/* </View> */}
-        </SafeAreaView>
         {loading && <Components.CustomLoader/>}
+
+        </SafeAreaView>
          </>
     )
 };

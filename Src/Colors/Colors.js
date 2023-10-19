@@ -55,9 +55,9 @@ export default {
     // 'rgba(244,233,255,1)',
 
     shadow_LightBlack: 'rgba(0, 0, 0, 0.50)',
-    loader_Bg: 'rgba(0, 0, 0, 0.5)',
+    loader_Bg: 'rgba(0, 0, 0, 0.15)',
     themePink:'#8E3583',
-    themeBlue:'#13364F',
+    themeBlue:'rgba(25,72,108,1)',
     darkWhite:'#F1F1F1'
 }
 

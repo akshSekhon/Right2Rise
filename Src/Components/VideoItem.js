@@ -8,12 +8,10 @@ import { TouchableHighlight } from 'react-native-gesture-handler'
 
 const VideoItem = ({ data, navigation }) => {
     const onCellSelected = () => {
-        if (data.navkey === Navigate.consulting) {
-            Alert.alert('Under working')
-            return
-        }
-        navigation.navigate(data.navkey)
+       
     }
+
+    console.log('VideoItem VideoItem :---',data);
     return (
         <View style={styles.container}>
             <View style={styles.innerContainer} >
@@ -26,11 +24,14 @@ const VideoItem = ({ data, navigation }) => {
                         <View style={styles.content}>
                             <Text
                                 numberOfLines={1}
-                                style={{ ...TextStyles.medium, fontSize: textScale(14), paddingVertical: moderateScaleVertical(5), }}
-                            >{"efsd vmnkskldf lkgjsfn gjdfj ggf mdglkhj"}</Text>
+                                style={{ ...TextStyles.medium, fontSize: textScale(14),flex:1 }}
+                            >{data?.item?.title}</Text>
+
+                            
                             <Image
-                                style={{ height: scale(30), width: scale(35), alignSelf: 'center' }}
-                                source={ImagePath.youtube}
+                                style={{width: scale(35),backgroundColor:'red',height:'80%' }}
+                                // source={ImagePath.youtube}
+                                source={{uri:data?.item?.image}}
                                 resizeMode={ImageEnum.contain}
                             />
                         </View>
@@ -65,6 +66,7 @@ const styles = StyleSheet.create({
     }, content: {
         gap: 10,
         justifyContent: 'space-evenly',
+        alignItems:'center',
         flexDirection: 'row',
         paddingHorizontal: moderateScale(8),
         paddingVertical: moderateScaleVertical(8)

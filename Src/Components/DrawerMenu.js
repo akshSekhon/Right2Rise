@@ -14,6 +14,7 @@ import { navigate } from '@react-navigation/compat/lib/typescript/src/Navigation
 import CustomSidebarMenu from './CustomSideBarMenu';
 import { ImagePath } from '../Constants';
 import { height } from '../Styles/responsiveSize';
+import DrawerOptions from './DrawerOptions';
 
 
 const Stack = createStackNavigator();
@@ -104,6 +105,20 @@ function DownloadsScreenStack({ navigation }) {
     </Stack.Navigator>
   );
 }
+function ConsultinsStack({ navigation }) {
+  return (
+    <Stack.Navigator
+      initialRouteName={screens.Consulting}
+      screenOptions={{
+        headerShown:false
+      }}>
+      <Stack.Screen
+        name={Navigate.downloads}
+        component={screens.Consulting}
+      />
+    </Stack.Navigator>
+  );
+}
 function VideosScreenStack({ navigation }) {
   return (
     <Stack.Navigator
@@ -118,6 +133,21 @@ function VideosScreenStack({ navigation }) {
     </Stack.Navigator>
   );
 }
+
+function contactUsStack({ navigation }) {
+  return (
+    <Stack.Navigator
+      initialRouteName={screens.ContactUs}
+      screenOptions={{
+        headerShown:false
+      }}>
+      <Stack.Screen
+        name={Navigate.conact_US}
+        component={screens.ContactUs}
+      />
+    </Stack.Navigator>
+  );
+}
 function MyDrawer() {
   return (
       <Drawer.Navigator
@@ -127,49 +157,50 @@ function MyDrawer() {
         screenOptions={{headerShown:false}}
         drawerContent={(props) => <CustomSidebarMenu {...props} />}>
         <Drawer.Screen
-          name={Navigate.logins}
-          options={{ drawerLabel: 'Dashbaord' }}
-          component={LoginScreenStack}
-        />
-        <Drawer.Screen
           name={Navigate.dashboard}
-          options={{ drawerLabel: 'Dashbaord' }}
+          // options={{ drawerLabel: 'Dashbaord' }}
           component={DashbaordScreenStack}
         />
-        <Drawer.Screen
-          name={Navigate.about_Us}
+        <Drawer.Screen name={Navigate.about_Us}
           component={AboutScreenStack}
-          options={
-            { drawerLabel:'', drawerIcon: ({ focused, size }) => (<Image resizeMode={'contain'}  style={{...styles.iconStyle}} source={ImagePath.about_nav}/>)}           
-          }
+          // options={
+          //   { drawerLabel:'', drawerIcon: ({ focused, size }) => (<DrawerOptions menuLabel={"About us"} imageName={ImagePath.about_nav} />)}           
+          // }
         />
         <Drawer.Screen
           name={Navigate.training}
           component={TrainingScreenStack}
-          options={
-            { drawerLabel:'', drawerIcon: ({ focused, size }) => (<Image resizeMode={'contain'}  style={{ ...styles.iconStyle}} source={ImagePath.training_nav}/>)}           
-          }
+          // options={
+          //   { drawerLabel:'Training', drawerContentStyle:{backgroundColor:"Green"}, drawerIcon: ({ focused, size }) => (<Image resizeMode={'contain'}  style={{ ...styles.iconStyle}} source={ImagePath.training_nav}/>)}           
+          // }
         />
-        <Drawer.Screen
-          name={Navigate.posh}
-          component={PoshScreenStack}
-          options={
-            { drawerLabel:'', drawerIcon: ({ focused, size }) => (<Image resizeMode={'contain'}  style={{ ...styles.iconStyle}} source={ImagePath.posh_nav}/>)}           
-          }
+         <Drawer.Screen
+          name={Navigate.consulting}
+          component={ConsultinsStack}
+          // options={
+          //   { drawerLabel:'', drawerIcon: ({ focused, size }) => (<Image resizeMode={'contain'}  style={{ ...styles.iconStyle}} source={ImagePath.download_nav}/>)}           
+          // }
         />
         <Drawer.Screen
           name={Navigate.downloads}
           component={DownloadsScreenStack}
-          options={
-            { drawerLabel:'', drawerIcon: ({ focused, size }) => (<Image resizeMode={'contain'}  style={{ ...styles.iconStyle}} source={ImagePath.download_nav}/>)}           
-          }
+          // options={
+          //   { drawerLabel:'', drawerIcon: ({ focused, size }) => (<Image resizeMode={'contain'}  style={{ ...styles.iconStyle}} source={ImagePath.download_nav}/>)}           
+          // }
         />
         <Drawer.Screen
           name={Navigate.videos}
           component={VideosScreenStack}
-          options={
-            { drawerLabel:'', drawerIcon: ({ focused, size }) => (<Image resizeMode={'contain'}  style={{ ...styles.iconStyle}} source={ImagePath.videos_nav}/>)}           
-          }
+          // options={
+          //   { drawerLabel:'', drawerIcon: ({ focused, size }) => (<Image resizeMode={'contain'}  style={{ ...styles.iconStyle}} source={ImagePath.videos_nav}/>)}           
+          // }
+        /> 
+          <Drawer.Screen
+          name={Navigate.conact_US}
+          component={contactUsStack}
+          // options={
+          //   { drawerLabel:'', drawerIcon: ({ focused, size }) => (<Image resizeMode={'contain'}  style={{ ...styles.iconStyle}} source={ImagePath.videos_nav}/>)}           
+          // }
         /> 
       </Drawer.Navigator>
   );
@@ -179,11 +210,10 @@ export default MyDrawer;
 
 const styles = StyleSheet.create({
   iconStyle: {
-    flex: 1,
+    //flex: 1,
     alignItems: "center",
-    width:100,
-    height:30,
-    alignSelf: 'stretch'
+    width:50,
+    height:35,
   }
 })
 
