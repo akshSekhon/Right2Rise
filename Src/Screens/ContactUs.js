@@ -1,15 +1,15 @@
 import { Alert, Image, StyleSheet, Text, TouchableHighlight, View } from 'react-native';
 import React, { useState } from 'react';
-import AppFonts from '../Constants/AppFonts';
+import AppFonts from '../ConstantFiles/AppFonts';
 import * as Components from '../Components/Index';
 import { moderateScale, moderateScaleVertical, scale } from '../Styles/responsiveSize';
 import Colors from '../Colors/Colors';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
-import En from '../Constants/En';
+import En from '../ConstantFiles/En';
 import { CommonStyles, TextStyles } from '../Styles/ComnStyle';
 import { flingHandlerName } from 'react-native-gesture-handler/lib/typescript/handlers/FlingGestureHandler';
 import { TextInput } from 'react-native-gesture-handler';
-import { ImageEnum, ImagePath } from '../Constants';
+import { ImageEnum, ImagePath } from '../ConstantFiles';
 
 const ContactUs = ({ navigation }) => {
   const [activeSections, setActiveSections] = useState([])

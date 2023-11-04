@@ -2,7 +2,7 @@
 import React, { Children, Component } from 'react';
 import { View, StyleSheet, ImageBackground, StatusBar } from 'react-native';
 import { CommonStyles } from '../Styles/ComnStyle';
-import ImagePath from '../Constants/ImagePath';
+import ImagePath from '../ConstantFiles/ImagePath';
 import { getStatusBarHeight } from 'react-native-status-bar-height';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Colors from '../Colors/Colors';
@@ -11,19 +11,19 @@ import * as Components from "./Index"
 
 // create a component
 const AppWrapper = (
-    { children,topSafeAreaStyle,bottomSafeAreaStyle,loading }) => {
+    { children,topSafeAreaStyle,bottomSafeAreaStyle,loading,statusBarColor = Colors.app_Bg }) => {
     return (
         <>
          {/* <View style={[styles.statusBar,{backgroundColor:'red'}]}>
             <StatusBar backgroundColor={'red'} {...props} />
         </View> */}
         
-        <StatusBar backgroundColor={Colors.app_Bg}  barStyle={'dark-content'}/>
-        <SafeAreaView style={{ flex:0,backgroundColor: Colors.app_Bg,...topSafeAreaStyle }} 
+        <StatusBar backgroundColor={statusBarColor}  barStyle={'dark-content'}/>
+        <SafeAreaView style={{ flex:0,backgroundColor: statusBarColor,...topSafeAreaStyle }} 
       edges={["left", "right", "bottom"]}
         
         />
-      <SafeAreaView style={{ flex:1, backgroundColor: Colors.app_Bg,...bottomSafeAreaStyle }}
+      <SafeAreaView style={{ flex:1, backgroundColor: statusBarColor,...bottomSafeAreaStyle }}
       edges={["left", "right", "bottom"]}
       >
         <View style={{flex:1,backgroundColor:Colors.app_White}}>

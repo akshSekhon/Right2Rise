@@ -1,7 +1,7 @@
 //import liraries
 import React, { Component, isValidElement, useEffect, useState } from 'react';
 import { View, Text, StyleSheet, Image, TextInput, TouchableHighlight, TouchableOpacity } from 'react-native';
-import ImagePath from '../Constants/ImagePath';
+import ImagePath from '../ConstantFiles/ImagePath';
 import Colors from '../Colors/Colors';
 import { CommonStyles } from '../Styles/ComnStyle';
 // create a component
@@ -18,12 +18,13 @@ const CustomTextInput = ({
   imageEyeOpen = ImagePath.eyeOpen,
   imageEyeClose = ImagePath.eyeClose,
   isshowLeftImg = false,
+  onPressLeftImage,
   isTogleSecure = false,
   editable = true,
   isShowRightImage = false,
   rightImage,
   rightImageAction,
-
+renderLeftImage,
   ...props
 }) => {
 
@@ -33,7 +34,15 @@ const CustomTextInput = ({
       <View>
         <View style={{ ...CommonStyles.textfieldContainer, ...innerContainerStyle }}>
           {isshowLeftImg &&
-            <Image style={CommonStyles.textInputImg} source={leftImage}/>
+          <TouchableOpacity
+          style={{minWidth:50}}
+          onPress={onPressLeftImage}
+          >
+            { renderLeftImage?
+            <>{renderLeftImage()}</>:
+            <Image style={{height:'100%',width:'100%'}} resizeMode='contain' source={{uri:leftImage}}/>
+            }
+          </TouchableOpacity>
           }
 
           <TextInput

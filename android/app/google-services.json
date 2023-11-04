@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1006121724084",
+    "project_id": "righttorise-ad645",
+    "storage_bucket": "righttorise-ad645.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1006121724084:android:fc113842843a3acda20fe1",
+        "android_client_info": {
+          "package_name": "com.app.rightToRise"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC9HWB_jey4S1RH7VACNg-Bkx4AWcdpPek"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

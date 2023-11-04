@@ -1,7 +1,7 @@
 import React from "react";
 import {View, StyleSheet,Image } from "react-native";
 import Colors from "../Colors/Colors";
-import { ImageEnum, ImagePath } from "../Constants";
+import { ImageEnum, ImagePath } from "../ConstantFiles";
 import { scale } from "../Styles/responsiveSize";
 
  const CustomLoader = ({containerStyle,imageStyle}) => {

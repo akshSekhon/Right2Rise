@@ -3,12 +3,13 @@ import React from 'react'
 import Colors from '../Colors/Colors'
 import { moderateScale, moderateScaleVertical, scale, textScale } from '../Styles/responsiveSize'
 import { TextStyles } from '../Styles/ComnStyle'
-import { ImageEnum, ImagePath, Navigate } from '../Constants'
+import { ImageEnum, ImagePath, Navigate } from '../ConstantFiles'
 import { TouchableHighlight } from 'react-native-gesture-handler'
+import NavigationService from '../NavigationStacks/NavigationService'
 
 const VideoItem = ({ data, navigation }) => {
     const onCellSelected = () => {
-       
+       NavigationService.navigate(Navigate.VideoPlayerScreen,data)
     }
 
     console.log('VideoItem VideoItem :---',data);
@@ -17,7 +18,7 @@ const VideoItem = ({ data, navigation }) => {
             <View style={styles.innerContainer} >
                 <>
                     <TouchableHighlight
-                        style={{ paddingHorizontal: moderateScale(14) }}
+                        style={{ paddingHorizontal: moderateScale(15) }}
                         underlayColor={Colors.selectedBg}
                         onPress={onCellSelected}
                     >

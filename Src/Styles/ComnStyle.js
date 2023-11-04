@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { AppFonts, ImageEnum } from "../Constants";
+import { AppFonts, ImageEnum } from "../ConstantFiles";
 import Colors from "../Colors/Colors";
 import { moderateScale, scale, textScale } from "./responsiveSize";
 

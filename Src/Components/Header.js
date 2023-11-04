@@ -5,9 +5,9 @@ import { View, Text, StyleSheet, Image, Alert } from 'react-native';
 import { height, moderateScale, moderateScaleVertical } from '../Styles/responsiveSize';
 import Colors from '../Colors/Colors';
 import { TouchableHighlight } from 'react-native-gesture-handler';
-import { ImagePath, Titles } from '../Constants';
+import { ImagePath, Titles } from '../ConstantFiles';
 import { TextStyles } from '../Styles/ComnStyle';
-import En from '../Constants/En';
+import En from '../ConstantFiles/En';
 import { NavigationContainer } from '@react-navigation/native';
 
 // create a component

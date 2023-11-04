@@ -5,7 +5,7 @@ import React from 'react';
 import {SafeAreaView,View,StyleSheet, Image,Text,Linking} from 'react-native';
 
 import {DrawerContentScrollView, DrawerItemList, DrawerItem,} from '@react-navigation/drawer';
-import { ImagePath } from '../Constants';
+import { ImagePath } from '../ConstantFiles';
 import DrawerOptions from './DrawerOptions';
 
 

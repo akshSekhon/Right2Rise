@@ -5,25 +5,47 @@
  * @format
  */
 
-import React from 'react';
-
-import {SafeAreaView,ScrollView,StatusBar,StyleSheet,Text,useColorScheme,View,} from 'react-native';
-
-
-import * as screens from './Src/Screens/index'
-import RootScreen from './Src/NavigationStacks/RootScreen';
+import React, { useEffect, useState } from 'react';
+import { StyleSheet } from 'react-native';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
-const App = () => {
+import { Provider } from 'react-redux';
+import RootScreen from './Src/NavigationStacks/RootScreen';
+import actions from './Src/redux/actions';
+import store from './Src/redux/store';
+import { getUserData } from './Src/Utilities/AsyncStorage';
 
+const App = () => {
+  const [loading, setLoading] = useState(true)
+
+
+
+  useEffect(() => {
+    if (!__DEV__) {
+      console.log = () => { };
+    }
+    _saveUserData();
+  }, []);
+  const _saveUserData = async () => {
+    setLoading(true)
+    await getUserData().then((res) => {
+      console.log('user loacal data : -=--- ', res);
+      actions.saveUserDataToReux(res)
+    setLoading(false)
+
+    })
+  };
 
   return (
 <GestureHandlerRootView style={{ flex: 1 }}>
+<Provider store={store}>
 
-<View style={styles.sectionContainer}>
-<RootScreen/>
-    </View>
-
+  {!loading &&
+    <RootScreen />
+  }
+</Provider>
 </GestureHandlerRootView>
+
+
 
 
   );

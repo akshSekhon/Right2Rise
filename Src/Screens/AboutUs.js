@@ -1,11 +1,11 @@
 import { Alert, StyleSheet, Text, View } from 'react-native'
 import React, { useState } from 'react'
-import AppFonts from '../Constants/AppFonts'
+import AppFonts from '../ConstantFiles/AppFonts'
 import * as Components from '../Components/Index'
 import Accordion from 'react-native-collapsible/Accordion';
 import { moderateScale } from '../Styles/responsiveSize';
 import Colors from '../Colors/Colors';
-import En from '../Constants/En';
+import En from '../ConstantFiles/En';
 import { CommonStyles } from '../Styles/ComnStyle';
 
 const AboutUs = ({navigation}) => {

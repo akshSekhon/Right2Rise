@@ -3,7 +3,7 @@ import React from 'react'
 import Colors from '../Colors/Colors'
 import { moderateScaleVertical, scale, textScale } from '../Styles/responsiveSize'
 import { TextStyles } from '../Styles/ComnStyle'
-import { ImageEnum, ImagePath, Navigate } from '../Constants'
+import { ImageEnum, ImagePath, Navigate } from '../ConstantFiles'
 import { TouchableHighlight } from 'react-native-gesture-handler'
 
 

@@ -9,6 +9,7 @@ export {default as RKTFoundation} from './RKTFoundation';
 export {default as Videos} from './Videos';
 export {default as Logins} from './Login';
 export {default as Consulting} from './Consulting';
+export {default as VideoPlayerScreen} from './VideoPlayerScreen';
 
 
 

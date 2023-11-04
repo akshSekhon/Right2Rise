@@ -1,12 +1,13 @@
 //import liraries
 import React, { Component, isValidElement, useEffect, useState } from 'react';
 import { View, Text, StyleSheet, Image, TextInput, TouchableHighlight, TouchableOpacity, Pressable, Alert } from 'react-native';
-import ImagePath from '../Constants/ImagePath';
+import ImagePath from '../ConstantFiles/ImagePath';
 import Colors from '../Colors/Colors';
 import { CommonStyles,TextStyles } from '../Styles/ComnStyle';
-import { Navigate } from '../Constants';
+import { Navigate } from '../ConstantFiles';
 import { FlatList } from 'react-native-gesture-handler';
 import { moderateScale, moderateScaleVertical, textScale } from '../Styles/responsiveSize';
+import actions from '../redux/actions';
 
 // create a component
 const DrawerOptions = ({ menuLabel, imageName, focus, containerStyle, props }) => {
@@ -62,6 +63,17 @@ const imgIcon = Object.hasOwn(imagsObj,item?.name) ? imagsObj[item.name].inactiv
                 ItemSeparatorComponent={<View style={{height:10}}/>}
                 renderItem={ItemView}
             />
+                   <Pressable onPress={()=> actions.clearLoginData()} style={{paddingStart:moderateScale(15),backgroundColor: Colors.app_White,...styles.container }} >
+                <View style={{ flexDirection: "row", flex: 1,alignItems:'center',gap:10 }}>
+                    <Image
+                        style={{ ...CommonStyles.textInputImg }}
+                        source={ImagePath.bitcoin}
+
+                    />
+                    {/* </Image> */}
+                    <Text style={{...TextStyles.medium,fontSize:textScale(16),color:Colors.themeBlue}}>{'Log out'}</Text>
+                </View>
+            </Pressable>
 
         </View>
     );

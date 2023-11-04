@@ -1,18 +1,20 @@
-import React from 'react'
 import { NavigationContainer } from '@react-navigation/native';
-import NavigationService from './NavigationService';
-import MainStack from './MainStack';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import AuthenticationStack from '../NavigationStacks/AuthenticationStack';
-import { createDrawerNavigator } from '@react-navigation/drawer';
-import { Navigate } from '../Constants';
-import * as screens from "../Screens/index"
-import MyDrawer from "../Components/DrawerMenu";
+import MyDrawer from "./DrawerMenu";
+import NavigationService from './NavigationService';
 
 
-function RootScreen (props) {
+function RootScreen(props) {
+    const userData = useSelector((state) => state?.auth?.userData)//token
+    console.log('userData userData userData:----', userData);
     return (
-        <NavigationContainer >
-            <MyDrawer/>
+        <NavigationContainer ref={(navigationRef) => {
+            NavigationService.setTopLevelNavigator(navigationRef);
+        }}
+        >
+            {userData?.loinStatus ? <MyDrawer /> : <AuthenticationStack />}
         </NavigationContainer>
     );
 }

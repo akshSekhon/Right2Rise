@@ -3,7 +3,7 @@ import React from 'react'
 import { height, moderateScale, moderateScaleVertical, scale } from '../Styles/responsiveSize'
 import Colors from '../Colors/Colors'
 import { TextStyles } from '../Styles/ComnStyle'
-import { ImageEnum, ImagePath } from '../Constants'
+import { ImageEnum, ImagePath } from '../ConstantFiles'
 
 const CollapseHeader = ({ data,isActive}) => {
     console.log('CollapseHeader isActive isActive: --- ',isActive)
@@ -13,7 +13,7 @@ const CollapseHeader = ({ data,isActive}) => {
             <View style={styles.innerContainer}>
                 <Text
                     style={{ ...TextStyles.medium, ...styles.headerTitle }}
-                >{data.title}</Text>
+                >{data?.title}</Text>
                 <Image
                     source={ImagePath.arrowDwn}
                     resizeMode={ImageEnum.contain}

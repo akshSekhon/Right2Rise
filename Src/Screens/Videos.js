@@ -1,9 +1,9 @@
 import { Alert, StyleSheet, View } from 'react-native'
 import React, { useEffect, useState } from 'react'
-import AppFonts from '../Constants/AppFonts'
+import AppFonts from '../ConstantFiles/AppFonts'
 import * as Components from '../Components/Index'
 import { moderateScale } from '../Styles/responsiveSize';
-import En from '../Constants/En';
+import En from '../ConstantFiles/En';
 import { FlatList } from 'react-native-gesture-handler';
 import axios from 'axios';
 

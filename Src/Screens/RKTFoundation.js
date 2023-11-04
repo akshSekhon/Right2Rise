@@ -1,12 +1,12 @@
 import { Alert, Image, StyleSheet, Text, View } from 'react-native'
 import React, { useState } from 'react'
-import AppFonts from '../Constants/AppFonts'
+import AppFonts from '../ConstantFiles/AppFonts'
 import * as Components from '../Components/Index'
 import Accordion from 'react-native-collapsible/Accordion';
 import { moderateScale, moderateScaleVertical, scale } from '../Styles/responsiveSize';
 import Colors from '../Colors/Colors';
-import En from '../Constants/En';
-import { ImageEnum, ImagePath } from '../Constants';
+import En from '../ConstantFiles/En';
+import { ImageEnum, ImagePath } from '../ConstantFiles';
 import { CommonStyles } from '../Styles/ComnStyle';
 
 const RKTFoundation = ({ navigation }) => {
