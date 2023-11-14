@@ -16,8 +16,10 @@ const Dashboard = ({navigation}) => {
         { id: 1, icon: ImagePath.about_us, title: En.About_Us, navkey: Navigate.about_Us, bgColor: Colors.themePink },
         { id: 2, icon: ImagePath.training, title: En.Training, navkey: Navigate.training, bgColor: Colors.themeBlue },
         { id: 3, icon: ImagePath.consulting, title: En.Consulting, navkey: Navigate.consulting, bgColor: Colors.themeBlue },
-        // { id: 4, icon: ImagePath.posh, title: En.POSH, navkey: Navigate.posh, bgColor: Colors.themePink },
-        // { id: 5, icon: ImagePath.usdt, title: En.RKT_Foundation, navkey: Navigate.RKT_Foundation, bgColor: Colors.themePink },
+
+        { id: 4, icon: ImagePath.trending_cases, title: En.Trending_Cases, navkey: Navigate.Trending_cases, bgColor: Colors.themePink },
+        { id: 5, icon: ImagePath.upcoming, title: En.Upcoming_webinars, navkey: Navigate.Upcoming_Webinars, bgColor: Colors.themePink },
+
         { id: 6, icon: ImagePath.downloads, title: En.Downloads, navkey: Navigate.downloads, bgColor: Colors.themeBlue },
         { id: 7, icon: ImagePath.videos, title: En.Videos, navkey: Navigate.videos, bgColor: Colors.themeBlue },
         { id: 8, icon: ImagePath.contact_us, title: En.Conact_US, navkey: Navigate.conact_US, bgColor: Colors.themePink },
@@ -25,7 +27,7 @@ const Dashboard = ({navigation}) => {
     ]
 
 
-    const listItem = ({ item }) => {
+    const ListItem = ({ item }) => {
         return (
             <>
                 <Components.DashBoardCompo
@@ -63,7 +65,7 @@ const Dashboard = ({navigation}) => {
                     keyExtractor={item => item.id}
                     horizontal={false}
                     numColumns={2}
-                    renderItem={listItem}
+                    renderItem={ListItem}
                 />
                 {/* </View> */}
                 {/* <Components.DashBoardCompo/> */}

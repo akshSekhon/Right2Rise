@@ -1,3 +1,4 @@
+import { Alert } from "react-native";
 import { FlagType, getAllCountries } from "react-native-country-picker-modal";
 import DeviceCountry,{TYPE_TELEPHONY,TYPE_CONFIGURATION,TYPE_ANY,} from 'react-native-device-country';
 
@@ -13,6 +14,26 @@ export function isValidUrl(str) {
     );
     return pattern.test(str);
   }
+  export function isValidText(type,str) {
+    if (str.trim() === '') {
+      Alert.alert(`Please enter ${type}`)
+      return false
+    }
+    return true
+  }
+
+export function isValidEmail(str) {
+  const mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  if (str.trim() === '') {
+    Alert.alert(`Please enter email`)
+    return false
+  }else if (!str.match(mailformat)){
+    Alert.alert(`Please enter valid email`)
+    return false
+  }
+  return true
+}
+
   export async function getLocale (callBck){
     DeviceCountry.getCountryCode(TYPE_TELEPHONY)
     .then((result) => {

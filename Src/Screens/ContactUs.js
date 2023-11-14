@@ -10,10 +10,14 @@ import { CommonStyles, TextStyles } from '../Styles/ComnStyle';
 import { flingHandlerName } from 'react-native-gesture-handler/lib/typescript/handlers/FlingGestureHandler';
 import { TextInput } from 'react-native-gesture-handler';
 import { ImageEnum, ImagePath } from '../ConstantFiles';
+import axios from 'axios';
+import { isValidEmail, isValidText } from '../Utilities/helper';
 
 const ContactUs = ({ navigation }) => {
   const [activeSections, setActiveSections] = useState([])
-  console.log(navigation)
+  const [loading, setLoading] = useState(false)
+const [contactDetails,setContactDetails] = useState({name:'',email:'',phone:'',company:'',requirement:''})
+
 
   const SocialMediaButton = ({ item = ImagePath.ellipse }) => {
     console.log('Items are : ---', item)
@@ -32,8 +36,57 @@ const ContactUs = ({ navigation }) => {
     )
   }
 
+const onSubmin = ()=>{
+if (!isValidText('name',contactDetails.name)){
+  console.log('name :--- ',contactDetails.name);
+  return
+}
+
+else if (!isValidEmail(contactDetails.email)){
+  return
+}
+else if (!isValidText('phone number',contactDetails.phone)){
+  return
+}
+else if (!isValidText('company',contactDetails.company)){
+  return
+}
+else if (!isValidText('requirements',contactDetails.requirement)){
+  return
+}
+else{
+  let payload = {...contactDetails,phone:Number(contactDetails.phone)}
+  console.log('requestToContactUs payload :---- ',payload);
+  requestToContactUs(payload)
+}
+}
+
+
+  const requestToContactUs = (params) => {
+    setLoading(true)
+    axios.post('https://right2rise.com/contact', {
+      params
+    })
+      .then((response) => {
+        // const arr = response?.data?.result
+        // setApiData(arr)
+        console.log('fetch requestToContactUs respons :-----', response);
+        setContactDetails({name:'',email:'',phone:'',company:'',requirement:''})
+        setLoading(false)
+        navigation.goBack()
+        // Alert.alert(response?.data.message)
+      }
+      )
+      .catch((error) => {
+        console.log('fetch requestToContactUs error:-----', JSON.stringify(error));
+        setLoading(false)
+        Alert.alert(JSON.stringify(error))
+      });
+  }
+
+
   return (
-    <Components.AppWrapper>
+    <Components.AppWrapper loading={loading}>
       <View style={styles.container}>
         <Components.Header
           navigation={navigation}
@@ -52,6 +105,8 @@ const ContactUs = ({ navigation }) => {
               </Text>
               <Components.CustomTextInput
                 containerStyle={{ flex: 1 }}
+                value={contactDetails?.name ?? ''}
+                onChangeText={(val)=> setContactDetails({...contactDetails,name:val})}
               />
             </View>
 
@@ -65,6 +120,8 @@ const ContactUs = ({ navigation }) => {
               </Text>
               <Components.CustomTextInput
                 containerStyle={{ flex: 1 }}
+                value={contactDetails?.email ?? ''}
+                onChangeText={(val)=> setContactDetails({...contactDetails,email:val})}
               />
             </View>
 
@@ -79,6 +136,9 @@ const ContactUs = ({ navigation }) => {
               </Text>
               <Components.CustomTextInput
                 containerStyle={{ flex: 1 }}
+                value={contactDetails?.phone ?? ''}
+                keyboardType={'phone-pad'}
+                onChangeText={(val)=> setContactDetails({...contactDetails,phone:val})}
               />
             </View>
 
@@ -91,6 +151,8 @@ const ContactUs = ({ navigation }) => {
               </Text>
               <Components.CustomTextInput
                 containerStyle={{ flex: 1 }}
+                value={contactDetails?.company ?? ''}
+                onChangeText={(val)=>setContactDetails({...contactDetails,company:val})}
               />
             </View>
 
@@ -107,12 +169,13 @@ const ContactUs = ({ navigation }) => {
                 style={styles.discriptionContainer}
               >
                 <TextInput
-                  style={{ ...TextStyles.regularMedium, flex: 0 }}
+                  style={{ ...CommonStyles.textInput, flex: 1 }}
                   multiline
+                  textAlignVertical='top'
                   placeholderTextColor={Colors.placeholder}
-                // value={discription}
-                // onChangeText={(val) => setDiscription(val)}
-                ></TextInput>
+                  value={contactDetails?.requirement ?? ''}
+                  onChangeText={(val)=> setContactDetails({...contactDetails,requirement:val})}
+                />
               </View>
 
             </View>
@@ -121,7 +184,7 @@ const ContactUs = ({ navigation }) => {
             <View style={{ justifyContent: 'center', marginTop: moderateScaleVertical(30) }}>
               <Components.CustomButton
                 containerStyle={styles.buttonSubmit}
-                onPress={() => Alert.alert("Test Button")}
+                onPress={onSubmin}
                 bgColor={Colors.themeBlue}
                 title={En.Submit}
               />

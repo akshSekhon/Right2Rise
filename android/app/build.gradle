@@ -80,6 +80,7 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
     }
     signingConfigs {
         debug {
@@ -106,7 +107,7 @@ android {
 dependencies {
     // The version of react-native is set by the React Native Gradle Plugin
     implementation("com.facebook.react:react-android")
-
+implementation( 'androidx.multidex:multidex:2.0.1')
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}")
     implementation 'com.facebook.fresco:animated-gif:2.5.0'
     debugImplementation("com.facebook.flipper:flipper-network-plugin:${FLIPPER_VERSION}") {

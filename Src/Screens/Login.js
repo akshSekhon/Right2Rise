@@ -77,11 +77,11 @@ const LoginScreen = ({ navigation }) => {
   const handleSendOTP = async () => {
 
     if (dialCode.trim() === '') {
-      Alert.alert('Error', 'Please select country Code');
+      Alert.alert('Alert', 'Please select country Code');
       return;
     }
     else if (phoneNumber.trim() === '') {
-      Alert.alert('Error', 'Please enter a phone number.');
+      Alert.alert('Alert', 'Please enter a phone number.');
       return;
     }
     setLoading(true)

@@ -1,17 +1,17 @@
 //import liraries
-import React, { Component, useEffect, useState } from 'react';
+import React, { Component, useCallback, useEffect, useState } from 'react';
 import { View, Text, StyleSheet, Platform, Image, Alert } from 'react-native';
 import VideoPlayer from 'react-native-video-controls';
 import Video from 'react-native-video';
 import { ImageEnum, ImagePath } from '../ConstantFiles';
 import * as Components from '../Components/Index'
 import Colors from '../Colors/Colors';
-import { moderateScale, scale } from '../Styles/responsiveSize';
+import { moderateScale, moderateScaleVertical, scale } from '../Styles/responsiveSize';
 import { TouchableOpacity } from 'react-native-gesture-handler';
 import NavigationService from '../NavigationStacks/NavigationService';
 import { isValidUrl } from '../Utilities/helper';
 import { TextStyles } from '../Styles/ComnStyle';
-
+import YoutubePlayer from "react-native-youtube-iframe";
 // create a component
 const VideoPlayerScreen = ({ navigation, route }) => {
   const lastScreenData = route?.params
@@ -33,51 +33,81 @@ const VideoPlayerScreen = ({ navigation, route }) => {
       // ]);
     }
   })
+  const VidePlayer = () => (
+    <>
 
+
+      {Platform.OS == 'ios' && (
+        <>
+          <TouchableOpacity style={{ paddingHorizontal: 10, paddingEnd: scale(25), flexDirection: 'row', }}
+            onPress={() => NavigationService.goBack()}
+          >
+            <Image source={ImagePath.arrowLeftGray} resizeMode={ImageEnum.contain} style={{ height: scale(25), width: scale(25), tintColor: Colors.app_White }} />
+            <Text style={{ ...TextStyles.medium, color: Colors.text_White, flex: 1, textAlign: 'center' }}>{videoItem?.title ? videoItem?.title : ''}</Text>
+          </TouchableOpacity>
+          <Video
+            source={{
+              uri: videoItem?.link,
+            }}
+            paused={false}
+            style={{ paddingHorizontal: 5 }}
+            repeat={true}
+            // resizeMode={ImageEnum.cover}
+            controls={true}
+          />
+        </>
+      )}
+
+      {Platform.OS == 'android' && (
+        <>
+
+          <VideoPlayer
+            navigator={navigation}
+            resizeMode={ImageEnum.cover}
+            title={videoItem?.title}
+            source={{
+              // uri:'https://youtu.be/GKbzdfQeiFc?si=U_7ylMHTvKgD92rc'
+              uri: videoUrl,
+            }}
+          //  navigator={this.props.navigator}
+          //   videoStyle={{backgroundColor:'red'}}
+          // style={{ paddingHorizontal:moderateScale(5)}}
+          />
+        </>
+      )}
+
+    </>
+
+  )
+  const [playing, setPlaying] = useState(false);
+  const onStateChange = useCallback((state) => {
+    if (state === "ended") {
+      setPlaying(false);
+      // Alert.alert("video has finished playing!");
+    }
+  }, []);
   return (
     <Components.AppWrapper loading={loading}
     >
 
       <View style={styles.container}>
+        <TouchableOpacity style={{ paddingHorizontal: 10, paddingEnd: scale(25), flexDirection: 'row', }}
+          onPress={() => NavigationService.goBack()}
+        >
+          <Image source={ImagePath.arrowLeftGray} resizeMode={ImageEnum.contain} style={{ height: scale(25), width: scale(25), tintColor: Colors.app_White }} />
+          <Text style={{ ...TextStyles.medium, color: Colors.text_White, flex: 1, textAlign: 'center' }}>{videoItem?.title ? videoItem?.title : ''}</Text>
+        </TouchableOpacity>
 
-        {Platform.OS == 'ios' && (
-          <>
-            <TouchableOpacity style={{ paddingHorizontal: 10, paddingEnd: scale(25), flexDirection: 'row', }}
-              onPress={() => NavigationService.goBack()}
-            >
-              <Image source={ImagePath.arrowLeftGray} resizeMode={ImageEnum.contain} style={{ height: scale(25), width: scale(25), tintColor: Colors.app_White }} />
-              <Text style={{ ...TextStyles.medium, color: Colors.text_White, flex: 1, textAlign: 'center' }}>{videoItem?.title ? videoItem?.title : ''}</Text>
-            </TouchableOpacity>
-            <Video
-              source={{
-                uri: videoItem?.link,
-              }}
-              paused={false}
-              style={{ paddingHorizontal: 5 }}
-              repeat={true}
-              // resizeMode={ImageEnum.cover}
-              controls={true}
-            />
-          </>
-        )}
+        <View style={{marginTop:25}}>
+          <YoutubePlayer
+            height={moderateScaleVertical(500)}
 
-        {Platform.OS == 'android' && (
-          <>
+            play={playing}
+            videoId={"iee2TATGMyI"}
+            onChangeState={onStateChange}
+          />
 
-            <VideoPlayer
-              navigator={navigation}
-              resizeMode={ImageEnum.cover}
-              title={videoItem?.title}
-              source={{
-                // uri:'https://youtu.be/GKbzdfQeiFc?si=U_7ylMHTvKgD92rc'
-                uri: videoUrl,
-              }}
-            //  navigator={this.props.navigator}
-            //   videoStyle={{backgroundColor:'red'}}
-            // style={{ paddingHorizontal:moderateScale(5)}}
-            />
-          </>
-        )}
+        </View>
 
       </View>
     </Components.AppWrapper>

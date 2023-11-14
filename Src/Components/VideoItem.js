@@ -18,7 +18,7 @@ const VideoItem = ({ data, navigation }) => {
             <View style={styles.innerContainer} >
                 <>
                     <TouchableHighlight
-                        style={{ paddingHorizontal: moderateScale(15) }}
+                        style={{ paddingHorizontal: moderateScale(15), paddingVertical: moderateScaleVertical(8) }}
                         underlayColor={Colors.selectedBg}
                         onPress={onCellSelected}
                     >
@@ -26,14 +26,13 @@ const VideoItem = ({ data, navigation }) => {
                             <Text
                                 numberOfLines={1}
                                 style={{ ...TextStyles.medium, fontSize: textScale(14),flex:1 }}
-                            >{data?.item?.title}</Text>
+                            >{data?.item?.title} jshfjsdfdjsfjksdhfjhdsj njksdhfkcjjdkfsdjdfn</Text>
 
-                            
                             <Image
-                                style={{width: scale(35),backgroundColor:'red',height:'80%' }}
+                                style={{width: scale(45),backgroundColor:'red',height:scale(28),borderRadius:3 }}
                                 // source={ImagePath.youtube}
                                 source={{uri:data?.item?.image}}
-                                resizeMode={ImageEnum.contain}
+                                resizeMode={ImageEnum.cover}
                             />
                         </View>
                     </TouchableHighlight>
@@ -69,8 +68,7 @@ const styles = StyleSheet.create({
         justifyContent: 'space-evenly',
         alignItems:'center',
         flexDirection: 'row',
-        paddingHorizontal: moderateScale(8),
-        paddingVertical: moderateScaleVertical(8)
+        
     }
 
 })

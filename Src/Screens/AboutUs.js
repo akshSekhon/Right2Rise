@@ -8,18 +8,42 @@ import Colors from '../Colors/Colors';
 import En from '../ConstantFiles/En';
 import { CommonStyles } from '../Styles/ComnStyle';
 
+
 const AboutUs = ({navigation}) => {
 const [activeSections,setActiveSections] = useState([])
   const SECTIONS = [
     {
-      title: 'First',
-      content: 'Lorem content from first ipsum...',
+      title: 'Our USP',
+      discription: 'Lorem content from first ipsum...',
     },
     {
-      title: 'Second',
-      content: 'Lorem content from second ipsum...',
+      title: 'Our Team',
+      discription: 'Lorem content from second ipsum...',
+    },
+    {
+      title: 'Core Belief',
+      discription: 'Lorem content from second ipsum...',
+    },{
+      title: 'Vision',
+      discription: 'Lorem content from second ipsum...',
+    },{
+      title: 'Mission',
+      discription: 'Lorem content from second ipsum...',
+    },{
+      title: 'Business Model',
+      discription: 'Lorem content from second ipsum...',
+    },{
+      title: 'Founder’s Profile',
+      discription: 'Lorem content from second ipsum...',
+    },{
+      title: 'Accreditation',
+      discription: 'Lorem content from second ipsum...',
+    },{
+      title: '	Company Brochure (PDF)',
+      discription: 'Lorem content from second ipsum...',
     },
   ];
+
   const _renderSectionTitle = (section) => {
     return (
       <View style={styles.content}>
@@ -29,8 +53,10 @@ const [activeSections,setActiveSections] = useState([])
   };
 const  _renderHeader = (section,index,isActive) => {
   return (
-    <View style={styles.header}>
+    <View style={{}}>
       <Components.CollapseHeader
+      style={{backgroundColor:index%2 == 0 ?Colors.themePink:Colors.themeBlue
+      }}
       isActive = {isActive}
       data = {section}
       />
@@ -42,6 +68,7 @@ const _renderContent = (section) => {
   return (
     <View style={{marginBottom:20}}>
     <Components.CollapseContainer
+    discription={section.discription}
       data = {section}
       />  
         </View>

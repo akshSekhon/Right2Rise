@@ -80,9 +80,9 @@ posh: require('../Assets/Icons/posh.png'),
 downloads: require('../Assets/Icons/downloads.png'),
 contact_us: require('../Assets/Icons/contact_us.png'),
 upcoming: require('../Assets/Icons/upcoming.png'),
-videos: require('../Assets/Icons/videos.png')
+videos: require('../Assets/Icons/videos.png'),
 
-
+trending_cases:require('../Assets/Icons/trending_cases.png'),
 
 
 

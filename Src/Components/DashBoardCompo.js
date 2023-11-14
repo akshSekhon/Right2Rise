@@ -29,7 +29,7 @@ const DashBoardCompo = ({ data ,navigation}) => {
                         <Image
                         style={{height:"100%", width:"100%"}}
                             source={data.icon}
-                            resizeMode={ImageEnum.cover}
+                            resizeMode={'stretch'}
                         />
                         {/* </View> */}
                     </TouchableHighlight>
@@ -60,7 +60,7 @@ const styles = StyleSheet.create({
 
         // justifyContent: 'center',
         // alignItems: 'center',
-        backgroundColor: Colors.app_White,
+        // backgroundColor: Colors.app_White,
         shadowColor: Colors.app_Black,
         shadowRadius: 3,
         shadowOpacity: 0.4,

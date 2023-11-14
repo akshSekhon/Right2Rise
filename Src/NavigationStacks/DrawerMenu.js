@@ -45,10 +45,17 @@ function TrainingScreenStack({ navigation }) {
     </Stack.Navigator>
   );
 }
-function PoshScreenStack({ navigation }) {
+function TrendingCaseeScreenStack({ navigation }) {
   return (
     <Stack.Navigator initialRouteName={screens.Posh} screenOptions={{ headerShown: false }}>
-      <Stack.Screen name={Navigate.posh} component={screens.Posh} />
+      <Stack.Screen name={Navigate.Trending_cases} component={screens.Trending_cases} />
+    </Stack.Navigator>
+  );
+}
+function UpcomingWebinarScreenStack({ navigation }) {
+  return (
+    <Stack.Navigator initialRouteName={screens.Posh} screenOptions={{ headerShown: false }}>
+      <Stack.Screen name={Navigate.Upcoming_Webinars} component={screens.Upcoming_Webinars} />
     </Stack.Navigator>
   );
 }
@@ -93,6 +100,8 @@ function MyDrawer() {
       <Drawer.Screen name={Navigate.downloads} component={DownloadsScreenStack} />
       <Drawer.Screen name={Navigate.videos} component={VideosScreenStack} />
       <Drawer.Screen name={Navigate.conact_US} component={contactUsStack} />
+      <Drawer.Screen name={Navigate.Trending_cases} component={TrendingCaseeScreenStack} />
+      <Drawer.Screen name={Navigate.Upcoming_Webinars} component={UpcomingWebinarScreenStack} />
     </Drawer.Navigator>
   );
 }

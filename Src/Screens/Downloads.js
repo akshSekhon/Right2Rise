@@ -58,10 +58,12 @@ const Downloads = ({ navigation }) => {
       </View>
     );
   };
-  const _renderHeader = (section) => {
+  const _renderHeader = (section,index) => {
     return (
       <View style={styles.header}>
         <Components.CollapseHeader
+      style={{backgroundColor:index%2 == 0 ?Colors.themePink:Colors.themeBlue}}
+        
           data={section}
 
         />
