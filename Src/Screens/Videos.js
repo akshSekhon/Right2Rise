@@ -6,14 +6,15 @@ import { moderateScale } from '../Styles/responsiveSize';
 import En from '../ConstantFiles/En';
 import { FlatList } from 'react-native-gesture-handler';
 import axios from 'axios';
+import { useIsFocused } from '@react-navigation/native';
 
 const Videos = ({ navigation }) => {
   const [activeSections, setActiveSections] = useState([])
   const [apiData, setApiData] = useState()
   const [loading, setLoading] = useState(false)
 
-
-  useEffect(() => { fetchVideos() },[])
+const isFocused = useIsFocused()
+  useEffect(() => {{ isFocused && fetchVideos() }},[isFocused])
 
   const fetchVideos = () => {
     setLoading(true)

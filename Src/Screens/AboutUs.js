@@ -12,6 +12,11 @@ import { CommonStyles } from '../Styles/ComnStyle';
 const AboutUs = ({navigation}) => {
 const [activeSections,setActiveSections] = useState([])
   const SECTIONS = [
+    
+    {
+      title: 'Our Company',
+      discription: 'Lorem content from first ipsum...',
+    },
     {
       title: 'Our USP',
       discription: 'Lorem content from first ipsum...',
@@ -39,7 +44,7 @@ const [activeSections,setActiveSections] = useState([])
       title: 'Accreditation',
       discription: 'Lorem content from second ipsum...',
     },{
-      title: '	Company Brochure (PDF)',
+      title: 'Company Brochure (PDF)',
       discription: 'Lorem content from second ipsum...',
     },
   ];
@@ -51,24 +56,36 @@ const [activeSections,setActiveSections] = useState([])
       </View>
     );
   };
-const  _renderHeader = (section,index,isActive) => {
+      const  _renderHeader = (section,index,isActive,) => {
   return (
     <View style={{}}>
       <Components.CollapseHeader
       style={{backgroundColor:index%2 == 0 ?Colors.themePink:Colors.themeBlue
       }}
       isActive = {isActive}
+      index={index}
       data = {section}
       />
     </View>
   );
 };
 
-const _renderContent = (section) => {
+// const _renderContent = (section) => {
+//   return (
+//     <View style={{marginBottom:20}}>
+//     <Components.CollapseContainer
+//     discription={section.discription}
+//       data = {section}
+//       />  
+//         </View>
+//   );
+// };
+const _renderContent = (section,index,isActive) => {
   return (
     <View style={{marginBottom:20}}>
     <Components.CollapseContainer
-    discription={section.discription}
+      isActive = {isActive}
+      discription={section?.discription}
       data = {section}
       />  
         </View>

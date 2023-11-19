@@ -1,33 +1,44 @@
 import { Alert, Image, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import Colors from '../Colors/Colors'
-import { moderateScaleVertical, scale, textScale } from '../Styles/responsiveSize'
+import { height, moderateScaleVertical, scale, textScale, width } from '../Styles/responsiveSize'
 import { TextStyles } from '../Styles/ComnStyle'
 import { ImageEnum, ImagePath, Navigate } from '../ConstantFiles'
 import { TouchableHighlight } from 'react-native-gesture-handler'
-
+import { useSafeAreaInsets,useSafeAreaFrame } from 'react-native-safe-area-context';
 
 
 const DashBoardCompo = ({ data ,navigation}) => {
+
+const insets = useSafeAreaInsets();
+const frm = useSafeAreaFrame()
+//     const bottomSafeAreaHeight = height - insets.bottom;
+// const topSafeAreaHeight = height - insets.top;
+
+// const finalWidth = width - (bottomSafeAreaHeight + topSafeAreaHeight)
+console.log('insets.bottom: ---',height);
+
+// console.log('insets.bottom: ---',insets.bottom,'\n insets.top :----- ',insets.top,'\n finalWidth : ---- ',finalWidth);
     const onCellSelected = () => {
-        if (data.navkey === Navigate.consulting){
-            Alert.alert('Under working')
-            return
-        }
+        // if (data.navkey === Navigate.consulting){
+        //     Alert.alert('Under working')
+        //     return
+        // }
         navigation.navigate(data.navkey)
     }
+
     return (
         <View style={styles.container}>
             <View style={styles.innerContainer} >
                 <>
                     <TouchableHighlight
-                        style={{height: scale(125) }}
+                        style={{}}
                         underlayColor={Colors.selectedBg}
                         onPress={onCellSelected}
 
                     >
                         <Image
-                        style={{height:"100%", width:"100%"}}
+                        style={{height:'100%',width:'100%'}}
                             source={data.icon}
                             resizeMode={'stretch'}
                         />
@@ -48,14 +59,14 @@ export default DashBoardCompo
 
 const styles = StyleSheet.create({
     container: {
-        // backgroundColor:'yellow',
-        flex: 1,
-        paddingHorizontal: 10,
-        paddingVertical: 10,
+        height:(height*0.64) / 4,
+        width:width*0.478,
+        paddingHorizontal: 8,
+        paddingVertical: 8,
         overflow: 'hidden'
     },
     innerContainer: {
-        // flex:1,
+        flex:1,
         overflow: 'hidden',
 
         // justifyContent: 'center',

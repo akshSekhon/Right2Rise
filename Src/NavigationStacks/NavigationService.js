@@ -19,7 +19,7 @@ function setTopLevelNavigator(navigatorRef) {
 
 const getCurrentRouteName = () => {
 	if( navigator !== null) {
-    console.log('getCurrentRouteName :---',navigator.getCurrentRoute())
+    console.log('getCurrentRouteName :---',navigator?.getCurrentRoute())
 		return navigator?.getCurrentRoute().name;
 	}
 	else{

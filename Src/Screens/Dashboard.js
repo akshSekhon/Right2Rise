@@ -3,13 +3,13 @@ import * as Components from '../Components/Index'
 
 import React from 'react'
 import { ImageEnum, ImagePath, Navigate } from '../ConstantFiles'
-import { moderateScale, moderateScaleVertical, scale, width } from '../Styles/responsiveSize'
+import { height, moderateScale, moderateScaleVertical, scale, width } from '../Styles/responsiveSize'
 import En from '../ConstantFiles/En'
 import Colors from '../Colors/Colors'
 import { TextStyles } from '../Styles/ComnStyle'
 import { FlatList } from 'react-native-gesture-handler'
 
-const Dashboard = ({navigation}) => {
+const Dashboard = ({ navigation }) => {
 
 
     const screenList = [
@@ -42,31 +42,38 @@ const Dashboard = ({navigation}) => {
         <Components.AppWrapper>
             <View style={styles.container}>
                 {/* MARK: ---- Logo container */}
-                <View style={{ paddingVertical: moderateScaleVertical(15), alignItems: 'center', paddingHorizontal: moderateScale(10) }}>
-                    <Image source={ImagePath.logo}
-                        resizeMode={ImageEnum.contain}
-                        style={{ width: '100%', height: scale(200), }} />
+                <View style={{}}>
+                    <View style={{ paddingVertical: moderateScaleVertical(15), alignItems: 'center', paddingHorizontal: moderateScale(10) }}>
+                        <Image source={ImagePath.logo}
+                            resizeMode={ImageEnum.contain}
+                            style={{ width: '100%',height:height*0.2}} />
+                    </View>
                 </View>
-                <View style={{alignItems:'center',paddingVertical:moderateScaleVertical(15)}}>
-                    <Text style={{color:'black'}}>(A part of ITF Global Pvt Ltd)</Text>
-                </View>
-                {/* MARK: ---- Text  A sliding demo text is to be displayed here with a transition. */}
-                <View style={{ backgroundColor: Colors.darkWhite, paddingVertical: moderateScaleVertical(10), alignItems: 'center', justifyContent: 'center' }}>
-                    <Text
-                        style={TextStyles.italic}
-                    >{En.dashBoardTitle} </Text>
-                </View>
-                {/* MARK: ---- Flat list  */}
 
-                {/* <View style={{paddingHorizontal:5 }}> */}
-                <FlatList
-                    columnWrapperStyle={{ justifyContent: 'space-between', }}
-                    data={screenList}
-                    keyExtractor={item => item.id}
-                    horizontal={false}
-                    numColumns={2}
-                    renderItem={ListItem}
-                />
+                    <View style={{ alignItems: 'center', paddingVertical: moderateScaleVertical(15) }}>
+                        <Text style={{ color: 'black' }}>(A part of ITF Global Pvt Ltd)</Text>
+                    </View>
+                    {/* MARK: ---- Text  A sliding demo text is to be displayed here with a transition. */}
+                    <View style={{ backgroundColor: Colors.darkWhite, paddingVertical: moderateScaleVertical(10), alignItems: 'center', justifyContent: 'center' }}>
+                        <Text
+                            style={TextStyles.italic}
+                        >{En.dashBoardTitle} </Text>
+                    </View>
+                    <View style={{height:height*0.8,paddingHorizontal:moderateScale(10) }} >
+
+                    {/* MARK: ---- Flat list  */}
+
+                    {/* <View style={{paddingHorizontal:5 }}> */}
+
+                    <FlatList
+                        columnWrapperStyle={{ justifyContent: 'space-between', }}
+                        data={screenList}
+                        keyExtractor={item => item.id}
+                        horizontal={false}
+                        numColumns={2}
+                        renderItem={ListItem}
+                    />
+                </View>
                 {/* </View> */}
                 {/* <Components.DashBoardCompo/> */}
             </View>

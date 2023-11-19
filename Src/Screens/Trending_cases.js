@@ -13,13 +13,7 @@ const [activeSections,setActiveSections] = useState([])
   const SECTIONS = [
     {
       title: 'First',
-      content: `POSH Act Prevention of Sexual Harassment POCO Act
-      Offences Act POSH Act Prevention of Sexual Harassmen
-      from Sexual Offences Act POSH Act Prevention of Sexua
-      of Children from Sexual Offences Act POSH Act Prevent
-      he Protection of Children from Sexual Offences Act POS
-      POCSO Act The Protection of Children from Sexual Offe
-      Harassment POCO Act The Protection of Children from...`,
+      content: `Lorem content from second ipsum...`,
     },
     {
       title: 'Second',
@@ -39,6 +33,7 @@ const  _renderHeader = (section,index) => {
       <Components.CollapseHeader
       style={{backgroundColor:index %2 == 0 ?Colors.themePink:Colors.themeBlue}}
       data = {section}
+      index={index}
       />
     </View>
   );

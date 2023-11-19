@@ -171,8 +171,8 @@ console.log('finalNumberfinalNumber',finalNumber);
 const renderIcon =()=>(
   <View style={{flex:1}}>
 <View style={{flexDirection:'row',height:'100%',alignItems:'center',paddingLeft:2,gap:4,}}>
-<Image style={{height:scale(35),width:scale(35)}} resizeMode ={'contain'}source={{uri:selectedCountry?.flag ? selectedCountry?.flag :Image.resolveAssetSource(ImagePath.about_menu).uri}}/>
-<Text>+{selectedCountry && selectedCountry?.callingCode?.length ?selectedCountry?.callingCode[0]:'91'}</Text>
+<Image style={{height:scale(35),width:scale(35),borderRadius:17.5}} resizeMode ={'contain'}source={{uri:selectedCountry?.flag ? selectedCountry?.flag :Image.resolveAssetSource(ImagePath.about_menu).uri}}/>
+<Text style={{ color: Colors.text_lightBlack,fontSize: textScale(16),fontFamily: AppFonts.regular,lineHeight:20}}>+{selectedCountry && selectedCountry?.callingCode?.length ?selectedCountry?.callingCode[0]:'91'}</Text>
 </View>
 </View>
 )
@@ -229,6 +229,7 @@ const renderIcon =()=>(
               </Text>
               <Components.CustomTextInput
                 containerStyle={{ flex: 1 }}
+                textStyle={{paddingLeft:4,lineHeight:20}}
                 maxLength={15}
                 onPressLeftImage={()=>setIsVisible(true)}
                 isshowLeftImg

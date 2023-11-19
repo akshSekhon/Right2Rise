@@ -1,6 +1,14 @@
 import {Dimensions, Platform, StatusBar} from 'react-native';
-const {width, height} = Dimensions.get('window');
+// const {width, height} = Dimensions.get('window');
+// const bottomSafeAreaHeight = insets.bottom;
+// const topSafeAreaHeight = insets.top;
 
+const window = Dimensions.get('window');
+
+// const bottomSafeAreaHeight = window.height - insets.bottom;
+// const topSafeAreaHeight = window.height - insets.top;
+const height = window.height// - (insets.bottom + insets.top)
+const width = window.width
 const LANDSCAPE = 'landscape';
 const PORTRAIT = 'portrait';
 
@@ -15,6 +23,7 @@ const guidelineBaseHeight = 812;
 
 const sliderWidth = width - 20;
 const itemWidth = width - 20;
+
 
 const isIPhoneX = () =>
   Platform.OS === 'ios' && !Platform.isPad && !Platform.isTVOS
@@ -70,4 +79,6 @@ export {
   itemWidth,
   StatusBarHeight,
   StatusBarHeightSecond,
+  // bottomSafeAreaHeight,
+  // topSafeAreaHeight
 };

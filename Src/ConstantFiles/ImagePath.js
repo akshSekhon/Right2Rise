@@ -6,13 +6,16 @@ demoPerson:require('../Assets/Images/demoPerson.jpeg'),
 bgImage : require('../Assets/Images/bgImage.png'),
 pdf : require('../Assets/Images/pdf.png'),
 
+pinkBgImage : require('../Assets/Images/pinkBgImage.png'),
+blueBgImage : require('../Assets/Images/blueBgImage.png'),
+
 logoSvg: require('../Assets/Images/bharatbit.svg'),
 logo: require('../Assets/Images/logo.png'),
 
 arrowDwn:require('../Assets/Icons/arrow_dwn.png'),
 arrowDwnBlack:require('../Assets/Icons/arrow_down_black.png'),
 mail:require('../Assets/Icons/mail.png'),
-
+down_arrow_fill:require('../Assets/Icons/down_arrow_fill.png'),
 
 eyeClose:require('../Assets/Icons/eye_close.png'),
 eyeOpen:require('../Assets/Icons/eye_open.png'),
@@ -64,7 +67,7 @@ videos_menu:require('../Assets/Icons/videos-menu.png'),
 upcoming_menu:require('../Assets/Icons/upcoming-menu.png'),
 posh_menu:require('../Assets/Icons/posh-menu.png'),
 contact_menu:require('../Assets/Icons/contact-menu.png'),
-
+trending_cases_menu:require('../Assets/Icons/trending_cases_menu.png'),
 
 
 /* end left nav */

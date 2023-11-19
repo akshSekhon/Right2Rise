@@ -2,9 +2,9 @@
 // https://aboutreact.com/custom-navigation-drawer-sidebar-with-image-and-icon-in-menu-options/
 
 import React from 'react';
-import {SafeAreaView,View,StyleSheet, Image,Text,Linking} from 'react-native';
+import { SafeAreaView, View, StyleSheet, Image, Text, Linking } from 'react-native';
 
-import {DrawerContentScrollView, DrawerItemList, DrawerItem,} from '@react-navigation/drawer';
+import { DrawerContentScrollView, DrawerItemList, DrawerItem, } from '@react-navigation/drawer';
 import { ImagePath } from '../ConstantFiles';
 import DrawerOptions from './DrawerOptions';
 
@@ -22,7 +22,7 @@ const CustomSidebarMenu = (props) => {
         style={styles.sideMenuProfileIcon}
       />
       <DrawerContentScrollView {...props}>
-<DrawerOptions  props={props}/>
+        <DrawerOptions props={props} />
 
         {/* <DrawerItemList {...props} /> */}
       </DrawerContentScrollView>
@@ -37,8 +37,8 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   container: {
-    width:'100%',
-    height:'100%'
+    width: '100%',
+    height: '100%'
   },
 
 });

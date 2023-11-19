@@ -19,55 +19,7 @@ const Upcoming_Webinars = ({ navigation }) => {
         {
             title: 'Second',
             content: 'Lorem content from second ipsum...',
-        },
-        {
-            title: 'First',
-            content: 'Lorem content from first ipsum...',
-        },
-        {
-            title: 'Second',
-            content: 'Lorem content from second ipsum...',
-        },
-        {
-            title: 'First',
-            content: 'Lorem content from first ipsum...',
-        },
-        {
-            title: 'Second',
-            content: 'Lorem content from second ipsum...',
-        },
-        {
-            title: 'First',
-            content: 'Lorem content from first ipsum...',
-        },
-        {
-            title: 'Second',
-            content: 'Lorem content from second ipsum...',
-        },
-        {
-            title: 'First',
-            content: 'Lorem content from first ipsum...',
-        },
-        {
-            title: 'Second',
-            content: 'Lorem content from second ipsum...',
-        },
-        {
-            title: 'First',
-            content: 'Lorem content from first ipsum...',
-        },
-        {
-            title: 'Second',
-            content: 'Lorem content from second ipsum...',
-        },
-        {
-            title: 'First',
-            content: 'Lorem content from first ipsum...',
-        },
-        {
-            title: 'Second',
-            content: 'Lorem content from second ipsum...',
-        },
+        }
     ];
     const _renderSectionTitle = (section) => {
         return (
@@ -82,7 +34,7 @@ const Upcoming_Webinars = ({ navigation }) => {
             <View style={styles.header}>
                 <Components.CollapseHeader
                     style={{ backgroundColor: index % 2 == 0 ? Colors.themePink : Colors.themeBlue }}
-
+                    index={index}
                     isActive={isActive}
                     data={section}
                 />
@@ -90,15 +42,17 @@ const Upcoming_Webinars = ({ navigation }) => {
         );
     };
 
-    const _renderContent = (section) => {
+    const _renderContent = (section,index,isActive) => {
         return (
-            <View style={{ marginBottom: 20 }}>
-                <Components.CollapseContainer
-                    data={section}
-                />
-            </View>
+          <View style={{marginBottom:20}}>
+          <Components.CollapseContainer
+            isActive = {isActive}
+            discription={section.content}
+            data = {section}
+            />  
+              </View>
         );
-    };
+      };
     const _updateSections = (activeSections) => {
         setActiveSections(activeSections)
         console.log('Active sessions are: =----', activeSections)
@@ -112,11 +66,11 @@ const Upcoming_Webinars = ({ navigation }) => {
                 />
                 {/* MARK: --- Image container */}
 
-                <View style={{ paddingVertical: moderateScaleVertical(25), alignItems: 'center', paddingHorizontal: moderateScale(10), }}>
+                {/* <View style={{ paddingVertical: moderateScaleVertical(25), alignItems: 'center', paddingHorizontal: moderateScale(10), }}>
                     <Image source={ImagePath.logo}
                         resizeMode={ImageEnum.contain}
                         style={{ height: scale(115), width: scale(115), borderRadius: 100, backgroundColor: Colors.lightGreyTxt }} />
-                </View>
+                </View> */}
                 {/* <Text style ={styles.font}>Downloads</Text> */}
                 <Accordion
                     activeSections={activeSections}

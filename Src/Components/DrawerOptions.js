@@ -8,17 +8,19 @@ import { Navigate } from '../ConstantFiles';
 import { FlatList } from 'react-native-gesture-handler';
 import { moderateScale, moderateScaleVertical, textScale } from '../Styles/responsiveSize';
 import actions from '../redux/actions';
+import NavigationService from '../NavigationStacks/NavigationService';
 
 // create a component
 const DrawerOptions = ({ menuLabel, imageName, focus, containerStyle, props }) => {
     const { state, navigation, descriptors } = props
-    const [selected, setSelected] = useState(Navigate.dashboard);
+    // const [selected, setSelected] = useState(NavigationService.getCurrentRouteName());
+    const selected = NavigationService.getCurrentRouteName()
     const { routes, index } = state;
     const TabInx = index;
     const renderColor = (currentTab) =>
         currentTab === selected ? Colors.themeBlue : Colors.app_White;
     const handlePress = (activeTab, index) => {
-        if (state.index !== index) setSelected(activeTab);
+        // if (state.index !== index) setSelected(activeTab);
         navigation.navigate(activeTab);
     };
 
@@ -30,6 +32,8 @@ const imagsObj = {
     'Consulting':{inactiveIcon:ImagePath.consulting_menu},
     'Videos':{inactiveIcon:ImagePath.videos_menu},
     'Contact Us':{inactiveIcon:ImagePath.contact_menu},
+    'Trending Cases':{inactiveIcon:ImagePath.trending_cases_menu},
+    'Upcoming Webinars':{inactiveIcon:ImagePath.upcoming_menu},
 }
 
     const ItemView = ({item,index}) => {

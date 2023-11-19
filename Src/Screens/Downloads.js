@@ -63,7 +63,7 @@ const Downloads = ({ navigation }) => {
       <View style={styles.header}>
         <Components.CollapseHeader
       style={{backgroundColor:index%2 == 0 ?Colors.themePink:Colors.themeBlue}}
-        
+      index={index}
           data={section}
 
         />
